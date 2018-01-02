@@ -1,15 +1,12 @@
 package main
 
 import (
-	"bufio"
 	"errors"
-	"io"
 	"io/ioutil"
 	"net"
 	"net/http"
 	"net/http/httputil"
 	"net/url"
-	"os"
 	"regexp"
 	"strconv"
 	"strings"
