@@ -93,27 +93,7 @@ func getEndPoint(DockerData string) string {
 	if endPoint != "" {
 		return endPoint
 	}
-	filepath := getBetween(DockerData, `"HostsPath":"`, `",`)
-	buf := make(map[int]string, 6)
-	inputFile, inputError := os.Open(filepath)
-	if inputError != nil {
-		LogErr(inputError, "getEndPoint open file err"+filepath)
-		return ""
-	}
-	defer inputFile.Close()
-
-	inputReader := bufio.NewReader(inputFile)
-	lineCounter := 0
-	for i := 0; i < 2; i++ {
-		inputString, readerError := inputReader.ReadString('\n')
-		if readerError == io.EOF {
-			break
-		}
-		lineCounter++
-		buf[lineCounter] = inputString
-	}
-	hostname := strings.Split(buf[1], "	")[0]
-	hostname = strings.Replace(hostname, "\n", " ", -1)
+	hostname := getBetween(DockerData, `"Hostname":"`, `",`)
 	return hostname
 }
 
