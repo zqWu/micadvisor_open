@@ -11,7 +11,6 @@ import (
 	"strconv"
 	"strings"
 	"os"
-	"log"
 )
 
 func getCpuNum(dockerdata string) {
@@ -86,18 +85,29 @@ func getContainerId(cadvisorData string) string {
 	return containerId
 }
 
-func getEndPoint(DockerData string) string {
+func getEndPointOld(DockerData string) string {
 	//get endpoint from env first
-	_hostname := os.Getenv("e_hostname")
-	log.Println("getEndPoint, DockerData=",DockerData)
-	log.Println("getEndPoint, _hostname=",_hostname)
-	
+	log.Println("getEndPoint, DockerData=",DockerData);
 	endPoint := getBetween(DockerData, `"EndPoint=`, `",`)
 	if endPoint != "" {
 		return endPoint
 	}
 	hostname := getBetween(DockerData, `"Hostname":"`, `",`)
 	return hostname
+}
+
+func getEndPoint(DockerData string) string {
+	_hostname := os.Getenv("e_hostname")
+	log.Println("getEndPoint, DockerData=",DockerData)
+	log.Println("getEndPoint, _hostname=",_hostname)
+	
+	containerName := getBetween(DockerData, `"name":"/`, `",`)
+	endPoint := ""
+	endPoint += _hostname
+	endPoint += '-'
+	endPoint += containerName
+
+	return sendPoint
 }
 
 func getDockerData(containerId string) (string, error) {
