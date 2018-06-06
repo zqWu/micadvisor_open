@@ -102,7 +102,7 @@ func getEndPoint(DockerData string) string {
 	log.Println("getEndPoint, DockerData=",DockerData)
 	log.Println("getEndPoint, _hostname=",_hostname)
 	
-	containerName := getBetween(DockerData, `"name":"/`, `",`)
+	containerName := getBetween(DockerData, `"Name":"/`, `",`)
 	endPoint := ""
 	endPoint += _hostname
 	endPoint += "-"
