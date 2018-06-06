@@ -2312,6 +2312,8 @@
 
 
 - DockerData
+docker inspect xxx
+
 ```
 {
   "Id": "29d13e46ece62c3a6c51140e496b966bf82becc1331cdfe052546a598648fe26",

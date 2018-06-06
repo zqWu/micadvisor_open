@@ -5,7 +5,7 @@ cd `dirname $0`
 git pull
 ./build.sh
 
-e_hostname=`hostname`	# e_hostname = env hostname
+e_hostname="docker-$(hostname)"	# e_hostname = env hostname
 echo "e_hostname=$e_hostname"
 
 c_name=micadvisor		# c_name = container name
