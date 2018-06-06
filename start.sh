@@ -27,4 +27,4 @@ docker run \
 --restart=always \
 micadvisor:latest
 
-docker logs -f $c_name
+# docker logs -f $c_name
