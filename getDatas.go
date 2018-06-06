@@ -117,6 +117,7 @@ func getDockerData(containerId string) (string, error) {
 	if err != nil {
 		LogErr(err, "getDockerData err")
 	}
+	log.Println("id=",containerId,"DockerData=",str)
 	return str, nil
 }
 
