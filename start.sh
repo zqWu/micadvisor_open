@@ -19,7 +19,7 @@ docker run \
 --volume=/var/lib/docker/:/var/lib/docker:ro \
 --volume=/home/docker/containers:/home/docker/containers:ro \
 --publish=18080:18080 \
---env Interval=10 \
+--env Interval=60 \
 --env e_hostname=$e_hostname \
 --detach=true \
 --name=$c_name \
