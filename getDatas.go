@@ -10,6 +10,7 @@ import (
 	"regexp"
 	"strconv"
 	"strings"
+	"os"
 )
 
 func getCpuNum(dockerdata string) {
@@ -86,6 +87,10 @@ func getContainerId(cadvisorData string) string {
 
 func getEndPoint(DockerData string) string {
 	//get endpoint from env first
+	_hostname := os.Getenv("_hostname")
+	log.Println("getEndPoint, DockerData=",DockerData)
+	log.Println("getEndPoint, _hostname=",_hostname)
+	
 	endPoint := getBetween(DockerData, `"EndPoint=`, `",`)
 	if endPoint != "" {
 		return endPoint

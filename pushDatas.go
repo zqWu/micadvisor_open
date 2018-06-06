@@ -5,6 +5,7 @@ import (
 	"strconv"
 	"strings"
 	"time"
+	"log"
 )
 
 var (
@@ -18,6 +19,7 @@ func pushData() {
 		LogErr(err, "getcadvisorData err")
 		return
 	}
+	log.Println("cadvisorData=",cadvisorData)
 
 	t := time.Now().Unix()
 	timestamp := fmt.Sprintf("%d", t)
