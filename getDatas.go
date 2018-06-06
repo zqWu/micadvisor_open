@@ -108,7 +108,8 @@ func getEndPoint(DockerData string) string {
 	endPoint += "-"
 	endPoint += containerName
 
-	return sendPoint
+	log.Println("endPoint=",endPoint)
+	return endPoint
 }
 
 func getDockerData(containerId string) (string, error) {
