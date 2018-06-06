@@ -88,7 +88,7 @@ func getContainerId(cadvisorData string) string {
 
 func getEndPointOld(DockerData string) string {
 	//get endpoint from env first
-	log.Println("getEndPoint, DockerData=",DockerData);
+	// log.Println("getEndPoint, DockerData=",DockerData);
 	endPoint := getBetween(DockerData, `"EndPoint=`, `",`)
 	if endPoint != "" {
 		return endPoint
