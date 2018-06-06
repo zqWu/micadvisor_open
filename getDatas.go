@@ -11,6 +11,7 @@ import (
 	"strconv"
 	"strings"
 	"os"
+	"log"
 )
 
 func getCpuNum(dockerdata string) {
