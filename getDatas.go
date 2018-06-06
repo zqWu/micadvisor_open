@@ -87,7 +87,7 @@ func getContainerId(cadvisorData string) string {
 
 func getEndPoint(DockerData string) string {
 	//get endpoint from env first
-	_hostname := os.Getenv("_hostname")
+	_hostname := os.Getenv("e_hostname")
 	log.Println("getEndPoint, DockerData=",DockerData)
 	log.Println("getEndPoint, _hostname=",_hostname)
 	

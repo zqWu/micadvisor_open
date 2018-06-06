@@ -6,7 +6,7 @@ git pull
 ./build.sh
 
 e_hostname=`hostname`	# e_hostname = env hostname
-echo "e_hostname=$hostname"
+echo "e_hostname=$e_hostname"
 
 c_name=micadvisor		# c_name = container name
 docker rm -f $c_name 2>/dev/null
