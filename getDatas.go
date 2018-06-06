@@ -105,7 +105,7 @@ func getEndPoint(DockerData string) string {
 	containerName := getBetween(DockerData, `"name":"/`, `",`)
 	endPoint := ""
 	endPoint += _hostname
-	endPoint += '-'
+	endPoint += "-"
 	endPoint += containerName
 
 	return sendPoint
